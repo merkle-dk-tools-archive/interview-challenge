@@ -7,17 +7,22 @@ It is not a trap-infested test, its a discussion-baseline.
 
 Please do not distribute the interview assignment or leave complete questions and solutions online in neither forums nor repos or gists, for the fairness towards other candidates and the work associated in creating this assignment.
 
-## boot
+## boot 
 
-### boot 0x1 - run the application
-This one is simply to make sure that you have the IDE up and running, that you can compile and start the application.
+### boot 0x0 - clone and branch
+Make sure that you clone and branch out of main. Create your own feature/<your-name> branch.
+
+### boot 0x1 - open and run the application
+Open the solution in Visual Studio 2022 (you can get free community edition here: https://visualstudio.microsoft.com/vs/community/).
+This task is simply to make sure that you have the IDE up and running, that you can compile and start the application.
 
 ### boot 0x2 - run the tests
-Run the unit test project associated with the solution.
+Run the unit tests associated with the solution. Note that only a single test is validating from the beginning
 Make sure that tests continuously run and validate during the individual tasks.
 
 ### boot 0x3 - commits
-Each task should be committed to your private repo as individual commits
+Each task should be committed to your private repo as individual commits.
+Once you complete all the tasks you are going to deliver, please create a pull-request of the branch that you created. This pull-request will form the basis of our interview.
 
 ## task #1 - topic: data modeling, refactoring, DTO's
 Extend the solution by adding author and a category to an article (author object and category objects are already available in Interview.Repository.Models)
