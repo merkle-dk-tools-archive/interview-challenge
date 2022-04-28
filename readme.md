@@ -3,7 +3,7 @@
 ## intro
 This interview assignment contains tasks that aim to serve as a starting point for discussion, rather than a display of skills that can either be accepted or rejected. 
 
-It is not a trap-infested test, its a discussion-baseline.
+It is not a trap-infested test, its a discussion-baseline. It is expected that all questions will be read and discussed, not all tasks are expected to be solved!
 
 Please do not distribute the interview assignment or leave complete questions and solutions online in neither forums nor repos or gists, for the fairness towards other candidates and the work associated in creating this assignment.
 
