@@ -32,7 +32,8 @@ Extend the solution by adding author and a category to an article (author object
 ## task #2 - topics : API, response management, validation
 Extend the ArticlesController by adding endpoints for getting articles
 - Get articles within a time range
-- Get articles by author or by category names
+- Get articles by author with the latest article first
+- Get articles by category names alphabetically 
 - Make sure that empty results etc. have meaningful response codes
 - Support implementation with unit tests
 
