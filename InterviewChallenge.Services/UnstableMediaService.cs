@@ -7,7 +7,7 @@
     {
         public async Task<IEnumerable<string>> GetArticleMedia(string articleId)
         {
-            var images = new List<string>()
+            var images = new List<string>
             {
                 "https://unsplash.com/photos/vfOtKkhHkbE",
                 "https://unsplash.com/photos/g1Kr4Ozfoac",
