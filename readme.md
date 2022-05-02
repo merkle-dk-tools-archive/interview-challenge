@@ -3,7 +3,7 @@
 ## intro
 This interview assignment contains tasks that aim to serve as a starting point for discussion, rather than a display of skills that can either be accepted or rejected. 
 
-It is not a trap-infested test, its a discussion-baseline.
+It is not a trap-infested test, its a discussion-baseline. It is expected that all questions will be read and discussed, not all tasks are expected to be solved!
 
 Please do not distribute the interview assignment or leave complete questions and solutions online in neither forums nor repos or gists, for the fairness towards other candidates and the work associated in creating this assignment.
 
@@ -32,7 +32,8 @@ Extend the solution by adding author and a category to an article (author object
 ## task #2 - topics : API, response management, validation
 Extend the ArticlesController by adding endpoints for getting articles
 - Get articles within a time range
-- Get articles by author or by category names
+- Get articles by author with the latest article first
+- Get articles by category names alphabetically 
 - Make sure that empty results etc. have meaningful response codes
 - Support implementation with unit tests
 

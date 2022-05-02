@@ -7,5 +7,8 @@
         public string Teaser { get; set; }
 
         public DateTime Published { get; set; }
+
+        public Guid AuthorId { get; set; }
+        public Author Author { get; set; }
     }
 }
