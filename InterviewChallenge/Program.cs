@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<RepositoryContext>(context => context.UseInMemoryDatabase("interviewDB"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,7 +26,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-builder.Services.AddDbContext<RepositoryContext>(context => context.UseInMemoryDatabase("interviewDB"));
 
 app.Run();
