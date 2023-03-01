@@ -27,17 +27,22 @@ namespace InterviewChallenge.Repository
 
         public async Task<Article?> GetArticleById(Guid articleId)
         {
-            return await Articles.FindAsync(articleId);
+            return await Articles.Include(a => a.Author).Include(a => a.Category).FirstOrDefaultAsync(a => a.ArticleId == articleId);
         }
 
         public IList<Article> GetArticlesByAuthorName(string authorName)
         {
-            return Articles.Where(a => a.Author.Name == authorName).ToList();
+            return Articles.Include(a => a.Author).Include(a => a.Category).Where(a => a.Author.Name == authorName).OrderByDescending(a => a.Published).ToList();
         }
 
         public IList<Article> GetArticlesByCategoryName(string categoryName)
         {
-            return Articles.Where(a => a.Category.CategoryName == categoryName).ToList();
+            return Articles.Include(a => a.Author).Include(a => a.Category).Where(a => a.Category.CategoryName == categoryName).OrderBy(a => a.Category.CategoryName).ToList();
+        }
+
+        public IList<Article> GetArticlesInTimeRange(DateTime startTime, DateTime endTime)
+        {
+            return Articles.Include(a => a.Author).Include(a => a.Category).Where(a => a.Published >= startTime && a.Published <= endTime).ToList();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

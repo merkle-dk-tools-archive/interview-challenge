@@ -39,14 +39,18 @@ namespace InterviewChallenge.ApiFixtures
         /// </summary>
         /// <returns></returns>
         [Test]
-        public void GetArticlesByAuthorName_WithExistingAuthorName_ReturnsOKResult()
+        public async Task GetArticlesByAuthorName_WithExistingAuthorName_ReturnsOKResult()
         {
             //Arrange 
+            var controller = new ArticlesController(_databaseContext);
+            var authorName = "J.K. Brawling";
 
             //Act
+            IActionResult result = await controller.GetArticlesByAuthor(authorName);
 
             //Assert
-            Assert.Fail();
+            Assert.AreEqual(true, result is OkObjectResult);
+            Assert.IsNotNull((result as OkObjectResult)?.Value);
         }
 
         /// <summary>
@@ -54,14 +58,18 @@ namespace InterviewChallenge.ApiFixtures
         /// </summary>
         /// <returns></returns>
         [Test]
-        public void GetArticlesByCategoryName_WithExistingCategoryName_ReturnsOKResult()
+        public async Task GetArticlesByCategoryName_WithExistingCategoryName_ReturnsOKResult()
         {
             //Arrange 
+            var controller = new ArticlesController(_databaseContext);
+            var categoryName = "Category 1";
 
             //Act
+            IActionResult result = await controller.GetArticlesByCategory(categoryName);
 
             //Assert
-            Assert.Fail();
+            Assert.AreEqual(true, result is OkObjectResult);
+            Assert.IsNotNull((result as OkObjectResult)?.Value);
         }
 
         /// <summary>
@@ -69,14 +77,19 @@ namespace InterviewChallenge.ApiFixtures
         /// </summary>
         /// <returns></returns>
         [Test]
-        public void GetArticlesByTimeRange_WithValidTimeRange_ReturnsArticleInOKResult()
+        public async Task GetArticlesByTimeRange_WithValidTimeRange_ReturnsArticleInOKResult()
         {
             //Arrange 
+            var controller = new ArticlesController(_databaseContext);
+            var startTime = new DateTime(2015, 4, 1);
+            var endTime = new DateTime(2016, 1, 1);
 
             //Act
+            IActionResult result = await controller.GetArticlesInTimeRange(startTime, endTime);
 
             //Assert
-            Assert.Fail();
+            Assert.AreEqual(true, result is OkObjectResult);
+            Assert.IsNotNull((result as OkObjectResult)?.Value);
         }
     }
 }

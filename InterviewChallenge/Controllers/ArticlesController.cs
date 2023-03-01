@@ -46,4 +46,12 @@ public class ArticlesController : Controller
         return new OkObjectResult(articles);
     }
 
+    // GET
+    [HttpGet("get-articles-in-time-range")]
+    public async Task<IActionResult> GetArticlesInTimeRange(DateTime startTime, DateTime endTime)
+    {
+        var articles = _databaseContext.GetArticlesInTimeRange(startTime, endTime);
+
+        return new OkObjectResult(articles);
+    }
 }

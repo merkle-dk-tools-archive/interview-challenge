@@ -15,5 +15,6 @@ namespace InterviewChallenge.Repository.Interfaces
         Task<Article?> GetArticleById(Guid articleId);
         IList<Article> GetArticlesByAuthorName(string authorName);
         IList<Article> GetArticlesByCategoryName(string categoryName);
+        IList<Article> GetArticlesInTimeRange(DateTime startTime, DateTime endTime);
     }
 }
