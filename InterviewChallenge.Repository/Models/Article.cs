@@ -1,4 +1,7 @@
-﻿namespace InterviewChallenge.Repository.Models
+﻿using InterviewChallenge.Services;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace InterviewChallenge.Repository.Models
 {
     public class Article
     {
@@ -13,5 +16,7 @@
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
         public int Likes { get; set; }
+        [NotMapped]
+        public IEnumerable<string> Images { get; set; }
     }
 }

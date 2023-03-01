@@ -1,5 +1,6 @@
 using InterviewChallenge.Repository;
 using InterviewChallenge.Repository.Interfaces;
+using InterviewChallenge.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IRepositoryContext, RepositoryContext>(context => context.UseInMemoryDatabase("interviewDB").LogTo(Log.Logger.Information, LogLevel.Information, null));
+builder.Services.AddTransient<UnstableMediaService>();
 
 var app = builder.Build();
 

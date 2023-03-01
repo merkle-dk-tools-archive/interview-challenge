@@ -5,7 +5,7 @@
     /// </summary>
     public class UnstableMediaService
     {
-        public async Task<IEnumerable<string>> GetArticleMedia(string articleId)
+        public async Task<IEnumerable<string>> GetArticleMedia(Guid articleId)
         {
             var images = new List<string>
             {
