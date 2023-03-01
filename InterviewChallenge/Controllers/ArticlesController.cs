@@ -54,4 +54,31 @@ public class ArticlesController : Controller
 
         return new OkObjectResult(articles);
     }
+
+    // GET
+    [HttpGet("like-article")]
+    public async Task<IActionResult> LikeArticle(Guid articleId)
+    {
+        await _databaseContext.LikeArticle(articleId);
+
+        return Ok();
+    }
+
+    // GET
+    [HttpGet("like-author")]
+    public async Task<IActionResult> LikeAuthor(Guid authorId)
+    {
+        await _databaseContext.LikeAuthor(authorId);
+
+        return Ok();
+    }
+
+    // GET
+    [HttpGet("like-category")]
+    public async Task<IActionResult> LikeCategory(Guid categoryId)
+    {
+        await _databaseContext.LikeCategory(categoryId);
+
+        return Ok();
+    }
 }

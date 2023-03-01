@@ -28,7 +28,7 @@ namespace InterviewChallenge.ApiFixtures
 
             //Act
             IActionResult result = await controller.GetArticle(articleId);
-            
+
             //Assert
             Assert.AreEqual(true, result is OkObjectResult);
             Assert.IsNotNull((result as OkObjectResult)?.Value);

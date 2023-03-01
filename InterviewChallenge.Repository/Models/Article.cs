@@ -12,5 +12,6 @@
         public Author Author { get; set; }
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
+        public int Likes { get; set; }
     }
 }
