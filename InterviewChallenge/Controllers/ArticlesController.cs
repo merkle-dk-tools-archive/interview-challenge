@@ -1,13 +1,14 @@
 ﻿using InterviewChallenge.Repository;
+using InterviewChallenge.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InterviewChallenge.Api.Controllers;
 
 public class ArticlesController : Controller
 {
-    private readonly RepositoryContext _databaseContext;
+    private readonly IRepositoryContext _databaseContext;
 
-    public ArticlesController(RepositoryContext databaseContext)
+    public ArticlesController(IRepositoryContext databaseContext)
     {
         _databaseContext = databaseContext;
         databaseContext.Database.EnsureCreated();
@@ -26,4 +27,23 @@ public class ArticlesController : Controller
 
         return new OkObjectResult(article);
     }
+
+    // GET
+    [HttpGet("get-articles-by-author-name")]
+    public async Task<IActionResult> GetArticlesByAuthor(string authorName)
+    {
+        var articles = _databaseContext.GetArticlesByAuthorName(authorName);
+
+        return new OkObjectResult(articles);
+    }
+
+    // GET
+    [HttpGet("get-articles-by-category-name")]
+    public async Task<IActionResult> GetArticlesByCategory(string categoryName)
+    {
+        var articles = _databaseContext.GetArticlesByCategoryName(categoryName);
+
+        return new OkObjectResult(articles);
+    }
+
 }

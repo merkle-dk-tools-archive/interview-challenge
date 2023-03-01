@@ -1,4 +1,5 @@
 using InterviewChallenge.Repository;
+using InterviewChallenge.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<RepositoryContext>(context => context.UseInMemoryDatabase("interviewDB"));
+builder.Services.AddDbContext<IRepositoryContext, RepositoryContext>(context => context.UseInMemoryDatabase("interviewDB"));
 
 var app = builder.Build();
 
