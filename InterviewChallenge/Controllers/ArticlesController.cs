@@ -1,16 +1,19 @@
 ﻿using InterviewChallenge.Repository;
 using InterviewChallenge.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using ILogger = Serilog.ILogger;
 
 namespace InterviewChallenge.Api.Controllers;
 
 public class ArticlesController : Controller
 {
     private readonly IRepositoryContext _databaseContext;
+    private readonly ILogger _logger;
 
-    public ArticlesController(IRepositoryContext databaseContext)
+    public ArticlesController(IRepositoryContext databaseContext, ILogger logger)
     {
         _databaseContext = databaseContext;
+        _logger = logger;
         databaseContext.Database.EnsureCreated();
     }
 
